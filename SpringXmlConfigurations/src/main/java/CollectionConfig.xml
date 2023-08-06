@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:p="http://www.springframework.org/schema/p"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ https://www.springframework.org/schema/beans/spring-beans.xsd">
+ 
+ <bean id="studentref" class="com.spring_framework.SpringXmlConfigurations.beans.Student"> 
+ 	<property name="studentId" value="101"/>
+ 	<property name="studentName" value="Atul Wagh"/>
+ 	<property name="studentAddress" value="Pune, Mah"/>
+ </bean>
+ 
+ <!-- Setter Injection -->
+ <bean id="emp" class="com.spring_framework.CollectionXmlConfiguration.Employee">
+	<property name="employeeId" value="1" />
+	<property name="employeeName" value="Atul Wagh" />
+	<property name="phones">
+		<list>
+			<value>123456789</value>
+			<value>987654321</value>
+		</list>
+	</property>
+	
+	<property name="addresses">
+		<set>
+			<value>Hinjewadi</value>
+			<value>Pune</value>
+		</set>
+	</property>
+	<property name="courses">
+		<map>
+			<entry key="Java" value="10000"></entry>
+			<entry key="Python" value="7000"></entry>
+		</map>
+	</property>
+	<property name="student">
+		<ref bean="studentref"/>
+	</property>
+ </bean>
+ 
+ <!--  Constructor Injection -->
+ <bean id="emp_constructor_args" class="com.spring_framework.CollectionXmlConfiguration.Employee">
+ 	
+ 	<constructor-arg ref="studentref" />
+ 	
+	<property name="employeeId" value="1" />
+	<property name="employeeName" value="Atul Wagh" />
+	<property name="phones">
+		<list>
+			<value>123</value>
+			<value>312</value>
+		</list>
+	</property>
+	
+	<property name="addresses">
+		<set>
+			<value>Akurdi</value>
+			<value>Pune</value>
+		</set>
+	</property>
+	<property name="courses">
+		<map>
+			<entry key="Azure" value="15000"></entry>
+			<entry key="AWS" value="2000"></entry>
+		</map>
+	</property>
+ </bean>
+</beans>

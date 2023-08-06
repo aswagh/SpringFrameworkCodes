@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:p="http://www.springframework.org/schema/p"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ https://www.springframework.org/schema/beans/spring-beans.xsd">
+ <!-- services -->
+<!--  <bean id="petStore" class="org.springframework.samples.jpetstore.services.PetStoreServiceImpl">
+ <property name="accountDao" ref="accountDao"/>
+ <property name="itemDao" ref="itemDao"/>
+ </bean>
+ -->
+ 
+ <bean id="student1" class="com.spring_framework.SpringXmlConfigurations.beans.Student">
+ 	<property name="studentId">
+ 		<value>1</value>
+ 	</property>
+ 	<property name="studentName">
+ 		<value>Atul Wagh</value>
+ 	</property>
+ 	<property name="studentAddress">
+ 		<value>Pune</value>
+ 	</property>
+ </bean>
+ <bean id="student2" class="com.spring_framework.SpringXmlConfigurations.beans.Student">
+ 	<property name="studentId" value="2"/>
+ 	<property name="studentName" value="Rahul Patil"/>
+ 	<property name="studentAddress" value="Mumbai"/>
+ </bean>
+</beans>

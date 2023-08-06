@@ -1,4 +1,4 @@
-package org.spring-framework;
+package com.spring_jdbc.SpringJdbc;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
